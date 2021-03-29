@@ -3,9 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "/usr/local/include/wx-3.1/wx",
+                "/usr/local/include/wx-3.0/wx",
                 "/usr/include/",
-                "/usr/local/include/wx-3.1"
+                "/usr/local/include/wx-3.0"
             ],
             "defines": [],
             "compilerPath": "/usr/bin/gcc",

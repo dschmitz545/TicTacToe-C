@@ -1,4 +1,4 @@
-### How to RUN
+### How to RUN with CMake
 
 ```
 cmake -S. -B build
@@ -6,21 +6,37 @@ cmake --build build
 cd build
 ./main
 ```
+### How to RUN with g++
+```
+g++ main.cpp `wx-config --cxxflags --libs std` -o main.sh
+```
+
+### How to Run MinGw cross compiling Windows/Linux
+```
+sudo apt-get install mingw-w64
+```
+###### To run
+```
+i686-w64-mingw32-g++ main.cpp `wx-config --cxxflags --libs std` -o app.exe
+```
+
 
 ## How to Instal WXWidgets on Linux
-> ##### If you compile wxWidgets on Linux for the first time and don't like to read
-> ##### install instructions just do (in the base dir):
+
+##### Dependences
+
+> Ubuntu exemple:
+```
+sudo apt-get install libgtk-3-dev build-essential checkinstall
+```
 
 > - mkdir buildgtk
 > - cd buildgtk
-> - ../configure --with-gtk
+> - ../configure --with-gtk --disable-shared --enable-unicode
 > - make
-> - su <type root password>
-> - make install
-> - ldconfig
+> - sudo checkinstall
 
-
-
-##### [if you get "ldconfig: command not found", try using "/sbin/ldconfig"]
-
-##### If you don't do the 'make install' part, you can still use the libraries from the buildgtk directory, but they may not be available to other users.
+##### Track the installed files
+```
+dpkg -L package_name
+```
